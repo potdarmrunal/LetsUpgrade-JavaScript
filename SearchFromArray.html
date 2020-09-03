@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search From Array</title>
+</head>
+<body>
+	<h4>If element is in string of array then resultant array index will be shown here : </h4>
+	<button onclick="searchElement()">Show Result</button>
+	<script> 
+		function searchElement() {
+			var str = "This is my search assignment in javascript";
+			var result = str.search('search');
+			document.getElementsByTagName('h4')[0].innerHTML = result;
+			console.log(result); 
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Minutes To Second</title>
+</head>
+<body>
+	<h2 style="color: red">Minutes To Second</h2>
+	<h4>Answer will display here: </h4>
+	<button onclick="searchElement()">Show Result</button>
+	<script> 
+		function searchElement() {
+			var min = window.prompt("Enter minutes value : ");
+			var sec = Math.round(min / 0.01667);
+			document.getElementsByTagName('h4')[0].innerHTML = sec + " sec";
+		}
+	</script>
+</body>
+</html>

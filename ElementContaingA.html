@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Element Containg 'a'</title>
+</head>
+<body>
+	<h2 style="color: red">If contains elements return true else false</h2>
+	<h4></h4>
+	<button onclick="searchElement()">Show Result</button>
+	<script> 
+		function searchElement() {
+			var str = "This is my search assignment in javascript";
+			var result = str.includes("search");
+			document.getElementsByTagName('h4')[0].innerHTML = result;
+		}
+	</script>
+</body>
+</html>

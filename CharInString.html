@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search From Array</title>
+</head>
+<body>
+	<h2 style="color: red">Search if perticular element is in give string</h2>
+	<h4></h4>
+	<button onclick="searchElement()">Show Result</button>
+	<script> 
+		function searchElement() {
+			var str = "This is my search assignment in javascript";
+			var result = str.indexOf('search');
+			document.getElementsByTagName('h4')[0].innerHTML = "Char Index is: " +result;
+		}
+	</script>
+</body>
+</html>
