@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Of Objects</title>
+</head>
+<body>
+	<button onclick="ageLessThanThirty()">Click to see AgeLessThanThirty</button>
+	<button onclick="havingCountryIndia()">Click to see HavingCountryIndia</button><br>
+	<h3>Note:</h3><p>Visit console to view answer</p>
+
+<script type="text/javascript">
+
+	var obj = [
+			{
+				name: 'A',
+				age: 50,
+				country: 'India',
+				hobbies: ['dancing','singing']
+			},
+			{
+				name: 'B',
+				age: 20,
+				country: 'Us',
+				hobbies: ['dancing','singing','writting']
+			},
+			{
+				name: 'C',
+				age: 80,
+				country: 'Canda',
+				hobbies: ['reading','singing']
+			},
+			{
+				name: 'D',
+				age: 10,
+				country: 'India',
+				hobbies: ['painting','singing']
+			}
+	]
+
+	function ageLessThanThirty() {
+		obj.forEach( function (ele) {
+			if(ele.age < 30 )
+			{
+				console.log(ele);
+				return ele;
+			}
+		})
+	}
+
+	function havingCountryIndia() {
+		obj.forEach(function (ele) {
+			if(ele.country == "India")
+			{
+				console.log(ele);
+				return ele;
+			}
+		})
+	}
+</script>
+</body>
+</html>

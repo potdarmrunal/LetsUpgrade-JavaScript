@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Of Objects</title>
+</head>
+<body>
+	<button onclick="printArrayObject()">Click To Call ArrayFuction</button><br>
+	<h3>Note:</h3><p>Visit console to view answer</p>
+<script type="text/javascript">
+	function printArrayObject() {
+		var obj = [
+			{
+				name: 'A',
+				age: 50,
+				country: 'India',
+				hobbies: ['dancing','singing']
+			},
+			{
+				name: 'B',
+				age: 20,
+				country: 'Us',
+				hobbies: ['dancing','singing','writting']
+			},
+			{
+				name: 'C',
+				age: 80,
+				country: 'Canda',
+				hobbies: ['reading','singing']
+			},
+			{
+				name: 'D',
+				age: 10,
+				country: 'India',
+				hobbies: ['painting','singing']
+			}
+		]
+
+		obj.forEach( function (ele) {
+			console.log(ele);
+		})
+	}
+</script>
+</body>
+</html>

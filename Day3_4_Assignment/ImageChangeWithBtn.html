@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Change</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="col-sm-12 row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-6">
+			<img  style="align-content: center; height: 400px; width: 400px; margin-top: 8px;" id="image" src="https://i.pinimg.com/originals/05/1d/9f/051d9f97d2c17d33a726e2b8f0a72a05.jpg"><br><br><br>
+			<button id="btn1" class="btn btn-primary" onclick="changeImg1()">Button One</button>
+			<button id="btn2" class="btn btn-primary"  onclick="changeImg2()">Button Two</button>
+			<button id="btn3"  class="btn btn-primary" onclick="changeImg3()">Button Three</button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function changeImg1() {
+			const ele = document.getElementById("image");
+			const newUrl = "https://i.pinimg.com/originals/05/1d/9f/051d9f97d2c17d33a726e2b8f0a72a05.jpg";
+			ele.src = newUrl;
+		}
+		function changeImg2() {
+			const ele = document.getElementById("image");
+			const newUrl = "https://i.pinimg.com/originals/dd/ce/13/ddce13a3d3156e3215d2e8cfc123c488.jpg";
+			ele.src = newUrl;
+		}
+		function changeImg3() {
+			const ele = document.getElementById("image");
+			const newUrl = "https://i.pinimg.com/564x/0f/c9/2c/0fc92c0c603d237972e5ba0738bc3b87.jpg";
+			ele.src = newUrl;
+		}
+	</script>
+</body>
+</html>
