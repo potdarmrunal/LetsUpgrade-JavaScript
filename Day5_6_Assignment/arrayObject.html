@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Object</title>
+	<style type="text/css">
+		
+      .data {
+        height: 100%;
+        width: 80%;
+        background-color: lightgray;
+        margin-left: 10%;
+        margin-top: 50px;
+        padding: 20px;
+        display: inline-block;
+      }
+
+      .table {
+        width: 100%;
+        margin-top: 20px;
+        /* font-family: calibri; */
+      }
+      th,
+      td {
+        height: 40px;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .form {
+        margin-top: 20px;
+      }
+      input {
+        height: 40px;
+        text-indent: 20px;
+      }
+
+      button {
+        padding: 10px;
+      }
+	</style>
+</head>
+<body>
+	<div class="data">
+	<h1>Empolyee Details</h1>
+      <div class="form">
+        <form onsubmit="addEmployee(event)">
+          <input type="text"  placeholder="Name" id="name" />
+          <input type="number" placeholder="Age" id="age" />
+          <input type="text" placeholder="City" id="city" />
+          <input type="number" placeholder="Salery" id="Salery" />
+          <button type="submit">Add Data</button>
+        </form>
+      </div><br><br>
+      <div class="form">
+        <input
+          type="text"
+          placeholder="Start Searching here"
+          id="searchName"
+          onkeyup="searchByName()"
+        />
+      </div>
+      <br><br>
+      <div>
+      	<table border="1" class="table" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Sr no</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Salery</th>
+          </tr>
+        </thead>
+        <tbody class="tdata" id="tdata"></tbody>
+      </table>
+      </div>
+</div>
+      <script type="text/javascript">
+      	
+      	let Employee = [
+      		{
+      			name: 'ABC',
+      			age: '22',
+      			city: 'Pune',
+      			Salery:'50000'
+      		},
+      		{
+      			name: 'DEF',
+      			age: '25',
+      			city: 'Mumbai',
+      			Salery:'30000'
+      		},
+      		{
+      			name: 'GHI',
+      			age: '22',
+      			city: 'Nagpur',
+      			Salery:'35000'
+      		},
+      		{
+      			name: 'JKH',
+      			age: '22',
+      			city: 'Partur',
+      			Salery:'34000'
+      		},
+      		{
+      			name: 'LMN',
+      			age: '22',
+      			city: 'Ambejogai',
+      			Salery:'20000'
+      		}
+      	]
+
+      	
+      	function addEmployee(e){
+      		 e.preventDefault();
+      		let Employees = {};
+      		var name =  document.getElementById('name').value;
+      		var age = document.getElementById('age').value;
+      		var city = document.getElementById('city').value;
+      		var Salery = document.getElementById('Salery').value;
+
+      		Employees.name = name;
+      		Employees.age = Number(age);
+      		Employees.city = city;
+      		Employees.Salery = Salery;
+
+      		Employee.push(Employees);
+      		display(Employee);
+
+      		document.getElementById("name").value = "";
+  			document.getElementById("age").value = "";
+  			document.getElementById("city").value = "";
+  			document.getElementById("Salery").value = "";
+      	}
+
+      	display(Employee);
+
+      	function display(superarray) {
+  			let tabledata = "";
+
+			  superarray.forEach(function (emp, index) {
+			    let currentrow = `<tr>
+			    <td>${index + 1}</td>
+			    <td>${emp.name}</td>
+			    <td>${emp.age}</td>
+			    <td>${emp.city}</td>
+			    <td>${emp.Salery}</td>
+			    <td>
+			    <button onclick='deleteemp(${index})'>delete</button>
+			    </td>
+			    </tr>`;
+
+			    tabledata += currentrow;
+  		});
+
+	 	 document.getElementsByClassName("tdata")[0].innerHTML = tabledata;
+		}
+
+		function searchByName() {
+		  let searchValue = document.getElementById("searchName").value;
+
+		  let newdata = Employee.filter(function (emp) {
+		    return (
+		      emp.name.toUpperCase().indexOf(searchValue.toUpperCase()) != -1
+		    );
+		  });
+
+		  let data = Employee.filter(function (emp) {
+		    return (
+		      emp.city.toUpperCase().indexOf(searchValue.toUpperCase()) != -1
+		    );
+		  });
+		  display(data);
+	      display(newdata);
+	    }
+
+		function deleteemp(index) {
+				Employee.splice(index,1);
+				display(Employee);
+		}
+
+      </script>
+</body>
+</html>
